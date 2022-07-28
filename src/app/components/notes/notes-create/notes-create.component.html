@@ -1,0 +1,38 @@
+<div class="container">
+    <p>
+
+        <mat-toolbar-row class="title">
+          <h1 class="title-align">Create Note</h1>
+        </mat-toolbar-row>
+
+        <mat-divider></mat-divider>
+    
+        <mat-grid-list cols="1" rowHeight="4:1">
+          <mat-grid-tile>
+              <mat-card class="notes-card">
+                <div role="group" [formGroup]="createFormGroup">
+                    <p>
+                      <mat-form-field appearance="legacy">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="title" placeholder="type a title">
+                      </mat-form-field>
+                    </p>
+                    <p>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Description</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="description" placeholder="type a description">
+                      </mat-form-field>
+                    </p>
+                    <p>
+                      <button mat-stroked-button color="primary" (click)="createNote()">Create</button>
+                      <button mat-stroked-button color="warn" style="margin-left:10px;" [routerLink]="['/notes']">Cancel</button>
+                    </p>
+
+                    <div *ngIf="invalidLogin" class="alert alert-danger">Note invalid to create</div>
+                </div>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+      </p>
+</div>

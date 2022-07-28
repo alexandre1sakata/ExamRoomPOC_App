@@ -1,0 +1,7 @@
+<p>
+  <mat-toolbar class="header">
+    <span>ExamRoom POC</span>
+    <span class="example-spacer"></span>
+    <button *ngIf="isUserAuthenticated()" mat-stroked-button (click)="logOut()">Logout</button>
+  </mat-toolbar>
+</p>

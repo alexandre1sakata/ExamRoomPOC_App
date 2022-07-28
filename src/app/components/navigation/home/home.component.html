@@ -1,0 +1,8 @@
+<div class="container">
+      <div *ngIf="!isUserAuthenticated()">
+        <app-login></app-login>
+      </div>
+      <div *ngIf="isUserAuthenticated()">
+        <app-notes></app-notes>
+      </div>
+</div>

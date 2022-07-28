@@ -1,0 +1,27 @@
+<div class="container">
+  <p>
+
+    <mat-toolbar-row class="title">
+      <h1 class="title-align">Notes</h1>
+      <span class="example-spacer"></span>
+      <button mat-stroked-button color="primary" [routerLink]="['/notesCreate']">Add note</button>
+    </mat-toolbar-row>
+
+    <mat-divider></mat-divider>
+
+    <mat-grid-list cols="3" rowHeight="4:2">
+      <mat-grid-tile *ngFor="let note of notes">
+          <mat-card class="notes-card">
+            <mat-card-title>{{ note.title }}</mat-card-title>
+            <mat-card-content>{{ note.description }}</mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+              <button mat-stroked-button color="primary" [routerLink]="['/notesEdit/', note.id]">Update</button>
+              <button mat-stroked-button color="warn" (click)="deleteNote(note.id)">Delete</button>
+            </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </p>
+</div>
